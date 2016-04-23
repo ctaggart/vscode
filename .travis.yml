@@ -39,7 +39,8 @@ before_install:
   - |
     cd $HOME
     vnode=v5.10.1
-    curl -O https://nodejs.org/dist/$vnode/node-$vnode-linux-x64.tar.xz
+    # curl -O https://nodejs.org/dist/$vnode/node-$vnode-linux-x64.tar.xz
+    curl -O https://npm.taobao.org/mirrors/node/$vnode/node-$vnode-linux-x64.tar.xz
     tar xf node-$vnode-linux-x64.tar.xz
     export PATH=$PWD/node-$vnode-linux-x64/bin:$PATH
     cd $TRAVIS_BUILD_DIR
