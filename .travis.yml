@@ -35,8 +35,10 @@ before_install:
   #   export PATH=$PWD/node-$vnode-linux-x64/bin:$PATH
   #   cd $TRAVIS_BUILD_DIR
   # - echo "PATH=$PATH"
+  - env
   - node --version
   - npm --version
+  - python --version
   - npm config set python `which python`
   - npm install -g gulp
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
