@@ -20,7 +20,7 @@ os:
 #       - libgtk2.0-0
 
 before_install:
-  - sudo install-apt-packages.sh
+  - sudo ./install-apt-packages.sh
   - git submodule update --init --recursive
   - git clone https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
