@@ -21,10 +21,15 @@ addons:
 
 before_install:
   - git submodule update --init --recursive
-  - git clone https://github.com/creationix/nvm.git ./.nvm
-  - source ./.nvm/nvm.sh
-  - nvm install 5.10
-  - nvm use 5.10
+  # - git clone https://github.com/creationix/nvm.git ./.nvm
+  # - source ./.nvm/nvm.sh
+  # - nvm install 5.10
+  # - nvm use 5.10
+  - |
+    vnode=v5.10.1
+    curl -O https://nodejs.org/dist/$vnode/node-$vnode-linux-x64.tar.xz
+    tar xf node-$vnode-linux-x64.tar.xz
+    export PATH=$PWD/node-$vnode-linux-x64/bin:$PATH
   - npm config set python `which python`
   - npm install -g gulp
   - if [ $TRAVIS_OS_NAME == "linux" ]; then
